@@ -1,0 +1,132 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+ 	font-family: sans-serif;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.field {
+	display: flex;
+	flex-flow: column-reverse;
+}
+
+label,
+input {
+	transition: all 200ms ease;
+}
+
+input {
+	font-size: 24px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 5px 0;
+	&:focus {
+		outline: 0;
+		border-color: rgb(0, 62, 136);
+	}
+	&:placeholder-shown + label {
+		cursor: text;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transform-origin: left bottom;
+		transform: translate(0, 2.125em) scale(1.5);
+	}
+	&:not(:placeholder-shown) + label,
+	&:focus + label {
+		transform: translate(0, 0) scale(1);
+		cursor: default;
+		color: rgb(0, 62, 136);
+	}
+}
+
+label {
+	max-width: 66.666%;
+	color: #ccc;
+}
+
+::-webkit-input-placeholder {
+	opacity: 0;
+	transition: inherit;
+}
+
+
+.button {
+    width:331px;
+    display: flex;
+    height: 84px;
+    background: black;
+    color: white;
+    position:absolute;
+    align-items: center;
+    border: solid 1px white;
+    letter-spacing: .3em;
+    padding-left: 40px;
+    
+  }
+  
+  .button:hover > div {
+    margin-left: 214px;
+    transition: 0.5s cubic-bezier(.4,0,.2,1) ;
+  }
+  
+  .button:hover > b {
+    width:331px;
+    animation: letterroll cubic-bezier(.4,0,.2,1) 0.5s;
+  }
+  
+  b {
+    width:331px;
+    animation: backroll cubic-bezier(.4,0,.2,1) 0.5s;
+  }
+  
+  
+  @keyframes letterroll {
+    50% {
+      transform: translateY(-75%);
+      opacity: 0;
+    }
+    50.1% {
+      transform: translateY(75%);
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes backroll {
+    50% {
+      transform: translateY(75%);
+    }
+    50.1% {
+      transform:translateY(-75%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+  
+  #butn {
+    visibility: hidden;
+  }
+

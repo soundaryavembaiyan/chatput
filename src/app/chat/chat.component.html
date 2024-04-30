@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="field">
+        <ul>
+            <li *ngFor="let m of messages">{{ m }}</li>
+        </ul>
+        <input type="text" [(ngModel)]="message" (keydown.enter)="sendMessage()" name="fullname" id="fullname"
+            placeholder="Enter you message" autofill="autofill">
+        <label for="fullname">Name</label>
+    </div>
+    <button class="button" (click)="sendMessage()"><b>Click me to send message</b>
+    </button>
+</div>
